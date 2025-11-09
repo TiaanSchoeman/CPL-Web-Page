@@ -1,3 +1,8 @@
+/* ========================================
+   COZY PANDA LOGIC - FINAL STYLE.CSS
+   Enhanced Typography + Full Branding
+======================================== */
+
 :root {
   --bg: #f6efe6;
   --primary: #5a3825;
@@ -5,136 +10,501 @@
   --light: #d9b99b;
   --text: #2d1b10;
   --white: #fffaf4;
+  --card-bg: #ffffff;
+  --shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  margin: 0;
   font-family: "Poppins", sans-serif;
   background-color: var(--bg);
   color: var(--text);
+  line-height: 1.8;
+  font-size: 1.05rem;
+  margin: 0;
 }
 
-/* Header & Navbar */
+/* ========================================
+   TYPOGRAPHY IMPROVEMENTS
+======================================== */
+h1, h2, h3, h4 {
+  color: var(--primary);
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+
+h1 { font-size: 2.8rem; }
+h2 { font-size: 2.3rem; }
+h3 { font-size: 1.5rem; }
+
+p {
+  margin-bottom: 1.2rem;
+  color: #444;
+  font-weight: 400;
+}
+
+strong { color: var(--primary); font-weight: 600; }
+em { color: var(--accent); }
+
+/* ========================================
+   HEADER & NAVIGATION
+======================================== */
 header {
   background: var(--primary);
   padding: 1rem 0;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 nav {
-  width: 90%;
+  max-width: 1200px;
   margin: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 1rem;
 }
 
 .logo {
-  height: 65px;
+  height: 60px;
+  border-radius: 50%;
+  border: 3px solid var(--light);
+  object-fit: contain;
 }
 
 ul {
-  list-style: none;
   display: flex;
-  gap: 1.5rem;
-  margin: 0;
+  gap: 2rem;
+  list-style: none;
 }
 
 a {
-  text-decoration: none;
   color: var(--white);
-  font-weight: 500;
-  transition: 0.3s;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: var(--transition);
 }
 
-a:hover, .active {
+a:hover,
+.active {
   color: var(--light);
 }
 
-/* Hero Section */
+/* ========================================
+   HERO SECTION
+======================================== */
 .hero {
   text-align: center;
-  padding: 6rem 1rem;
-  background: var(--light);
+  padding: 7rem 1rem;
+  background: linear-gradient(135deg, var(--light), #e8d5c4);
   color: var(--primary);
-  border-radius: 0 0 50px 50px;
+  border-radius: 0 0 60px 60px;
+  margin-bottom: 3rem;
 }
 
 .hero h1 {
-  font-size: 2.5rem;
+  font-size: 3rem;
+  margin-bottom: 1rem;
 }
 
+.hero p {
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+/* ========================================
+   BUTTONS
+======================================== */
 .btn {
   display: inline-block;
-  margin-top: 1.5rem;
   background: var(--primary);
-  color: var(--white);
-  padding: 0.8rem 1.5rem;
-  border-radius: 25px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  transition: 0.3s;
+  color: white;
+  padding: 0.9rem 2.2rem;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 5px 15px rgba(90, 56, 37, 0.3);
+  transition: var(--transition);
+  font-size: 1.05rem;
 }
 
 .btn:hover {
   background: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(90, 56, 37, 0.4);
 }
 
-/* Page Content */
+/* ========================================
+   CONTENT
+======================================== */
 .content {
-  width: 80%;
+  max-width: 1200px;
   margin: 3rem auto;
+  padding: 0 1rem;
   text-align: center;
 }
 
+/* ========================================
+   SERVICE CARDS
+======================================== */
 .cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
+  margin-top: 2rem;
 }
 
 .card {
-  background: var(--white);
-  border-radius: 20px;
+  background: var(--card-bg);
+  border-radius: 18px;
   padding: 2rem;
-  width: 300px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-  transition: transform 0.3s;
+  text-align: center;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
 }
 
-/* Contact Form */
-.contact form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  width: 60%;
-  margin: 2rem auto;
+.card i {
+  margin-bottom: 1rem;
+}
+
+/* ========================================
+   PRICING GRID
+======================================== */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.pricing-card {
+  background: var(--card-bg);
+  border-radius: 20px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  position: relative;
+}
+
+.pricing-card:hover {
+  transform: translateY(-12px);
+}
+
+.pricing-card.featured {
+  border: 3px solid var(--accent);
+  background: linear-gradient(145deg, #fdfbf7, #f6f0e8);
+  transform: scale(1.03);
+  z-index: 1;
+}
+
+.pricing-card i {
+  margin-bottom: 1rem;
+}
+
+.pricing-card .price {
+  font-size: 2.3rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin: 1rem 0;
+}
+
+.pricing-card ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  margin: 1.2rem 0;
+}
+
+.pricing-card li {
+  margin: 0.8rem 0;
+  padding-left: 2.2rem;
+  position: relative;
+  font-size: 1.02rem;
+  color: #333;
+  font-weight: 500;
+}
+
+.pricing-card li i {
+  position: absolute;
+  left: 0;
+  top: 0.15rem;
+  color: var(--accent);
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* Checkmark on top of each feature */
+.pricing-card .check-icon {
+  display: inline-block;
+  width: 1.4rem;
+  height: 1.4rem;
+  margin-right: 0.6rem;
+  color: var(--accent);
+  font-weight: bold;
+  font-size: 1.1rem;
+  vertical-align: middle;
+}
+
+/* ========================================
+   ABOUT VALUES
+======================================== */
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.value-card {
   background: var(--white);
   padding: 2rem;
-  border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  text-align: left;
 }
 
-input, textarea {
-  padding: 0.8rem;
-  border: 1px solid var(--light);
-  border-radius: 10px;
+.value-card:hover {
+  transform: translateY(-6px);
+}
+
+.value-card h3 {
+  color: var(--primary);
+  margin: 0 0 0.8rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+/* ========================================
+   PROJECTS
+======================================== */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.project-card {
+  background: var(--card-bg);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+}
+
+.project-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.project-card .info {
+  padding: 1.5rem;
+  text-align: left;
+}
+
+.project-card h3 {
+  margin: 0 0 0.5rem;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.project-card p {
+  margin: 0 0 1rem;
+  font-size: 0.98rem;
+  color: #555;
+  font-weight: 400;
+}
+
+/* === PRICING FEATURES GRID (3 per row) === */
+.pricing-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.8rem;
+  margin: 1rem 0;
+  padding: 0 0.5rem;
+}
+
+.pricing-features li {
+  display: flex;
+  align-items: center;
+  font-size: 0.95rem;
+  color: #444;
+  font-weight: 500;
+}
+
+.pricing-features .check-icon {
+  color: var(--accent);
+  margin-right: 0.4rem;
   font-size: 1rem;
-  background: var(--bg);
 }
 
-textarea {
-  height: 120px;
+/* === PROJECT CARD STYLE (MATCH HOMEPAGE) === */
+.project-card {
+  background: var(--card-bg);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
 }
 
+.project-card:hover {
+  transform: translateY(-10px);
+}
+
+.repo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.2rem 0.5rem;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.repo-header h4 {
+  margin: 0;
+  font-weight: 600;
+  color: var(--primary);
+  font-size: 1.1rem;
+}
+
+.repo-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.repo-stats {
+  display: flex;
+  gap: 1rem;
+  padding: 0 1.2rem 0.8rem;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.repo-stats span {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.info {
+  padding: 0 1.2rem 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.info h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1.25rem;
+  color: var(--primary);
+}
+
+.info p {
+  margin: 0 0 1rem;
+  flex-grow: 1;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.info .btn {
+  align-self: flex-start;
+}
+
+/* ========================================
+   CONTACT FORM
+======================================== */
+.contact form {
+  max-width: 600px;
+  margin: 3rem auto;
+  background: var(--card-bg);
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  display: grid;
+  gap: 1.3rem;
+}
+
+#contact-form input,
+#contact-form textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid var(--light);
+  border-radius: 12px;
+  background: #fdf9f5;
+  font-size: 1.05rem;
+  transition: var(--transition);
+  font-family: inherit;
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(164, 104, 63, 0.2);
+}
+
+#contact-form textarea {
+  height: 150px;
+  resize: none;
+}
+
+/* ========================================
+   FOOTER
+======================================== */
 footer {
   text-align: center;
-  padding: 1.5rem;
+  padding: 2.2rem;
   background: var(--primary);
   color: var(--white);
-  margin-top: 3rem;
+  margin-top: 5rem;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+@media (max-width: 768px) {
+  .hero {
+    padding: 5rem 1rem;
+  }
+  .hero h1 {
+    font-size: 2.3rem;
+  }
+  nav {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }

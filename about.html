@@ -3,17 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Us | RedPanda Software</title>
+  <title>About | Cozy Panda Logic</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
 <body>
   <header>
     <nav>
-      <img src="logo.png" alt="Red Panda Logo" class="logo" />
+      <img src="images/Logo.jpeg" alt="Cozy Panda Logo" class="logo" />
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html" class="active">About</a></li>
         <li><a href="services.html">Services</a></li>
+        <li><a href="projects.html">Projects</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
@@ -21,18 +25,34 @@
 
   <section class="content">
     <h2>Our Story</h2>
-    <p>Founded in 2022, RedPanda Software began with a mission to make software development as comforting and dependable as a cozy nap. We blend creativity, reliability, and warmth into every line of code.</p>
+    <p>Founded in 2022, <strong>Cozy Panda Logic</strong> was born from a love of clean code and cozy user experiences. We believe software should feel <em>comfortable</em> — like a warm blanket on a chilly night.</p>
+    <p>Based in South Africa, we help SMBs go digital with affordable, high-quality solutions. No fluff. Just results.</p>
 
-    <h3>Our Values</h3>
-    <ul>
-      <li><strong>Quality:</strong> Every product is carefully crafted and tested.</li>
-      <li><strong>Trust:</strong> We build lasting relationships with our clients.</li>
-      <li><strong>Innovation:</strong> We adapt and grow with every project.</li>
-    </ul>
+    <h2>Our Core Values</h2>
+    <div class="values-grid">
+      <div class="value-card">
+        <h3>Quality</h3>
+        <p>Every line of code is tested, reviewed, and polished to perfection.</p>
+      </div>
+      <div class="value-card">
+        <h3>Trust</h3>
+        <p>We deliver on time, on budget, and with full transparency.</p>
+      </div>
+      <div class="value-card">
+        <h3>Innovation</h3>
+        <p>We use modern tools like React, Node.js, and cloud platforms to stay ahead.</p>
+      </div>
+      <div class="value-card">
+        <h3>Affordability</h3>
+        <p>Pro-level work at prices that make sense for South African businesses.</p>
+      </div>
+    </div>
   </section>
 
   <footer>
-    <p>© 2025 RedPanda Software. All rights reserved.</p>
+    <p>© 2025 Cozy Panda Logic. All rights reserved.</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
