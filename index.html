@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RedPanda Software</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <nav>
+      <img src="logo.png" alt="Red Panda Logo" class="logo" />
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Building Warm, Reliable Software</h1>
+    <p>At RedPanda Software, we create cozy, powerful digital solutions that help your business thrive.</p>
+    <a href="services.html" class="btn">Explore Our Services</a>
+  </section>
+
+  <footer>
+    <p>© 2025 RedPanda Software. All rights reserved.</p>
+  </footer>
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+(function() {
+  emailjs.init("dQBmzDC5A5i2L9Mz6");
+})();
+
+document.querySelector("form").addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const name = this.querySelector("#name").value;
+  const email = this.querySelector("#email").value;
+  const message = this.querySelector("#message").value;
+
+  emailjs.send("service_edfghyf", "template_747kltt", {
+    name: name,
+    email: email,
+    message: message,
+  }).then(
+    function() {
+      alert("Message sent successfully 🐾");
+    },
+    function(error) {
+      alert("Message failed to send 😔 Check your EmailJS setup.");
+      console.error(error);
+    }
+  );
+});
+</script>
+</body>
+</html>
